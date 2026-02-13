@@ -1,4 +1,4 @@
-# Selego – Intern Technical Test
+# Selego Technical Test
 
 **⏱ Time Allocation: 3 hours maximum**
 
