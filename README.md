@@ -11,8 +11,8 @@
 - [What's Already Built](#whats-already-built)
 - [What to Build](#what-to-build)
   - [1. Core features](#1-core-features)
-  - [2. AI Bonus (optional)](#2-ai-bonus-optional-30-min-max)
-  - [3. Email Notification Feature Bonus (optional)](#3-email-notification-feature-bonus-optional)
+  - [2. Your Choice Feature (optional)](#2-your-choice-feature-optional-30-min-max)
+  - [3. AI Bonus (optional)](#3-ai-bonus-optional-30-min-max)
 - [Technical Constraints](#technical-constraints)
 - [Evaluation Criteria](#evaluation-criteria)
   - [1. Code Quality (40%)](#1-code-quality-40)
@@ -40,7 +40,7 @@ You're building a **project budget tracker**. Companies need to track their proj
 
 - Can you design a good data model?
 - Can you build clean APIs?
-- Can you integrate with external services (email / AI)?
+- Can you integrate with external services (AI)?
 - Can you structure service layers properly?
 - Can you ship something that works, fast?
 - Do you keep it simple or over-engineer?
@@ -67,7 +67,6 @@ The boilerplate includes:
 - User authentication (signup, signin, logout)
 - User model with MongoDB
 - File upload to S3
-- Email service integration (Brevo)
 - Basic API structure
 
 ✅ **Frontend (`app/` folder)**
@@ -107,7 +106,30 @@ Optional :
 
 ---
 
-### 2. AI Bonus (optional, 30 min max)
+### 2. Your Choice Feature (optional, 30 min max)
+
+**Choose and implement a feature that you believe adds value for the user.**
+
+The goal is to demonstrate your ability to identify business value and implement it efficiently.
+
+**Guidelines:**
+
+- Pick a feature that is **valuable** for users of a budget tracker
+- Keep it **simple** - a basic implementation is perfectly fine
+- Make it **cheap** to implement (30 minutes max)
+- The feature should be **practical** and enhance the user experience
+
+**What we're evaluating:**
+
+- Can you identify what would be useful for users?
+- Do you make smart trade-offs between value and implementation cost?
+- Can you deliver a simple but functional version?
+
+⚠️ **Optional**: don't spend more than 30 minutes on it. Document your choice and reasoning in your submission README.
+
+---
+
+### 3. AI Bonus (optional, 30 min max)
 
 If you have time, add a **mini AI feature**:
 
@@ -125,24 +147,6 @@ You can use:
 - Or any other simple service
 
 ⚠️ **Optional**: don't spend more than 30 minutes on it. We prefer a clean CRUD over a poorly integrated AI.
-
-### 3. Email Notification Feature Bonus (optional)
-
-**When a project goes over budget**, send an automatic email notification using Brevo.
-
-#### Implementation Details:
-
-The boilerplate already includes: Brevo service integration in `api/src/services/brevo.js`
-
-You need to:
-
-1. **Set up your Brevo account** (free tier available at [brevo.com](https://www.brevo.com/))
-2. **Add your API key** to `api/.env`:
-   ```
-   BREVO_KEY=your_brevo_api_key_here
-   ```
-3. **Create the logic** to detect when a project goes over budget
-4. **Send the email** when this happens
 
 ---
 
@@ -284,20 +288,21 @@ Your README should include:
 - Over-complicated solutions with unnecessary abstractions
 - Nested data structures in MongoDB (expenses inside projects)
 - Inconsistent patterns and naming across the codebase
-- No error handling for external services (email/AI)
+- No error handling for external services (AI)
 - Code that doesn't run or missing core features
-- Over-engineered AI features that don't add real value
+- Over-engineered features that don't add real value
 
 **Green Flags ✅:**
 
 - Clean, readable code that's easy to understand
 - Flat MongoDB schemas with proper references
-- Well-structured service layer (separate files for email/AI)
+- Well-structured service layer (separate files for external services like AI)
 - Consistent API patterns throughout
 - Early returns and simple logic
 - Working features with good error handling for external APIs
 - Good judgment on what to build vs skip
-- Simple, practical AI feature that adds value
+- Smart feature choice in section 2 that adds real value
+- Simple, practical AI feature that adds value (if implemented)
 - Smart trade-offs between speed and quality
 
 ---
@@ -307,11 +312,8 @@ Your README should include:
 **Q: How much detail do I need in the data models?**  
 A: Use your judgment. Include what makes sense for a budget tracker. We're evaluating your decisions.
 
-**Q: Which email service should I use?**  
-A: The boilerplate already has Brevo configured, you just need to setup a free account and put your keys. You can use the existing email service integration or switch to another provider if you prefer.
-
-**Q: When should the email alert be sent?**  
-A: You decide. When expenses are added? On a schedule? When budget is exceeded? Justify your choice in the README.
+**Q: What feature should I build in section 2?**  
+A: Use your judgment. Pick something that you believe would be valuable for users of a budget tracker and that you can implement quickly. We're evaluating your ability to identify business value and make pragmatic choices.
 
 **Q: Which AI feature should I build?**  
 A: Pick the one that makes most sense to you or come up with your own. We want to see your judgment. Don't overthink it - simple and working beats complex and broken.
@@ -326,7 +328,7 @@ A: Absolutely. Use whatever you're comfortable with. We care about the integrati
 A: No, authentication is already implemented in the boilerplate. You can use the existing user system or skip authentication entirely for the project tracker features.
 
 **Q: What about styling?**  
-A: Make it usable. We're not judging design skills, but it should be functional and looking at least okay!
+A: We're not judging design skills, but it should be functional and looking at least okay! You can use AI to have good looking components and so that it's not time consuming.
 
 **Q: What if I can't finish in 3 hours?**  
 A: Submit what you have. A working partial solution is better than a broken complete one. Be honest about time spent.
@@ -336,6 +338,9 @@ A: We prefer plain JavaScript.
 
 **Q: Should I use state management libraries?**  
 A: Use your judgment. For a small app, local state is probably fine. Otherwise, we usually use zustand, as done with the user.
+
+**Q: Can I use AI tools to help me code?**  
+A: Yes, we actually recommend using AI tools (Cursor, Claude Code, GitHub Copilot, ChatGPT, etc.) to speed up development. However, we evaluate the final code quality: organization, simplicity, readability, and architecture. The code should be clean and not overly complex. We expect you to understand all the code you submit and be ready to discuss your implementation choices during the technical interview.
 
 ---
 
@@ -354,7 +359,6 @@ A: Use your judgment. For a small app, local state is probably fine. Otherwise, 
    - Push your code to your own repository
 
 2. **Use the existing boilerplate**
-
    - The repository already contains a working `api/` (backend) and `app/` (frontend) folder
    - Authentication system with signup/signin is already implemented
    - Basic infrastructure (routing, API client, file upload) is already set up
@@ -362,7 +366,6 @@ A: Use your judgment. For a small app, local state is probably fine. Otherwise, 
    - Focus on building the project tracker features on top of this foundation
 
 3. **Configure your database**
-
    - Create your own MongoDB database by changing the database name at the end of the MongoDB URL
    - In the `api/.env` file, update the `MONGODB_ENDPOINT`:
 
