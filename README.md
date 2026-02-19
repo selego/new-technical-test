@@ -11,7 +11,7 @@
 - [What's Already Built](#whats-already-built)
 - [What to Build](#what-to-build)
   - [1. Core features](#1-core-features)
-  - [2. Your Choice Feature (optional)](#2-your-choice-feature-optional-30-min-max)
+  - [2. Your Choice Feature](#2-your-choice-feature-30-min-max)
   - [3. AI Bonus (optional)](#3-ai-bonus-optional-30-min-max)
 - [Technical Constraints](#technical-constraints)
 - [Evaluation Criteria](#evaluation-criteria)
@@ -106,7 +106,7 @@ Optional :
 
 ---
 
-### 2. Your Choice Feature (optional, 30 min max)
+### 2. Your Choice Feature
 
 **Choose and implement a feature that you believe adds value for the user.**
 
@@ -118,14 +118,13 @@ The goal is to demonstrate your ability to identify business value and implement
 - Keep it **simple** - a basic implementation is perfectly fine
 - Make it **cheap** to implement (30 minutes max)
 - The feature should be **practical** and enhance the user experience
+- Document your choice and reasoning in your submission README.
 
 **What we're evaluating:**
 
 - Can you identify what would be useful for users?
 - Do you make smart trade-offs between value and implementation cost?
 - Can you deliver a simple but functional version?
-
-⚠️ **Optional**: don't spend more than 30 minutes on it. Document your choice and reasoning in your submission README.
 
 ---
 
